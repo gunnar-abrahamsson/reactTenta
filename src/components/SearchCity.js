@@ -1,12 +1,17 @@
 import React from 'react';
 
-class SearchCity extends React.Component {
-	render() {
+const SearchCity = (props) => {
 		return (
 			<div id="SearchCity" className="mb-5">
-				<form>
+				<form onSubmit={props.handleSubmit}>
 					<div className="input-group">
-						<input type="text" className="form-control form-control-lg" id="city" />
+						<input 
+							type="text" 
+							className="form-control form-control-lg" 
+							id="city" 
+							onChange={props.handleChange}
+							value={props.city}
+						/>
 
 						<div className="input-group-append">
 							<button className="btn btn-success btn-lg">Search</button>
@@ -15,7 +20,6 @@ class SearchCity extends React.Component {
 				</form>
 			</div>
 		)
-	}
 }
 
 export default SearchCity;
